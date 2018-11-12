@@ -44,11 +44,14 @@ reusable should go in `Config`
 This is not a strict **life or death** way of structuring a flask app. Remember programming is art. As long as your app 
 can be testable go with whatever makes you sleep at night :relieved:
 
-**Tips (Frequent updates exptected):**
+**Tips (Frequent updates expected):**
 1. For any file in the `models` package. Make sure it's within a class or method/function. It makes it easy to mock stuff
 during testing
-2. While testing your endpoints start with **negative vibes first**. Basically, start testing for non 200/201 responses first
-
+2. While organizing your models be careful while using the `orgranize imports` feature available in text editors and IDEs
+it can affect how your models are loaded(i.e relationships) thus prevent your app from starting.
+3. While testing your endpoints start with **negative vibes first**. Basically, start testing for non 200/201 responses first
+4. Any method/function/class in the `utils` package should depend on anything local outside the utils package. In fact, dependencies
+should be passed in as parameters. It helps prevent cyclic dependencies
 
 **Further References:**
 
