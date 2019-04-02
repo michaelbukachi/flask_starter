@@ -28,7 +28,7 @@ Here's the basic directory structure;
 **models** - This holds all your data classes and utility functions that interact with any kind of persitence 
 (Mongo, Mysql etc) 
 
-**resources** - This package usually holds endpoints related to an API. Try avoid putting view endpoints here. Put them
+**resources** - This package usually holds endpoints related to an API. Try to avoid putting view endpoints here. Put them
 in the `view` package instead
 
 **view** - This package holds any endpoint that deals with any visual representation i.e endpoints that return html
@@ -50,7 +50,8 @@ during testing
 2. While organizing your models be careful while using the `orgranize imports` feature available in text editors and IDEs
 it can affect how your models are loaded(i.e relationships) thus prevent your app from starting.
 3. While testing your endpoints start with **negative vibes first**. Basically, start testing for non 200/201 responses first
-4. Any method/function/class in the `utils` package should depend on anything local outside the utils package. In fact, dependencies
+4. Any method/function/class in the `utils` package should not depend on anything outside the utils package (Scope of your code. They can depend on libraries).
+5. Make use of Flask extensions. They save a lot of time! [Here](http://flask.pocoo.org/extensions/) is a good place to start.
 should be passed in as parameters. It helps prevent cyclic dependencies
 
 **Further References:**
